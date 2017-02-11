@@ -1,11 +1,12 @@
 @extends('layots.app')
 
 @section ('content')
-    <link href="{!! asset('css/style.css') !!}" media="all" rel="stylesheet" type="text/css" />
+
     <div class="col-sm-8 col-sm-offset-2 main"  >
+        <h1>Modern Music Library from around the World!</h1><hr/>
 <ol>
     @foreach($posts as $post)
-        <h1><li><a href="{{route('posts.show',$post->id )}}" >{{$post->text}}</a></li></h1>
+        <h2><li><a href="{{route('posts.show',$post->id )}}" >{{$post->text}}</a></li></h2>
 
     @endforeach
 </ol>
