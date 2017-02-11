@@ -3,6 +3,7 @@
 @section ('content')
 
     <div class="col-sm-8 col-sm-offset-2 main"  >
+
         <h1>Modern Music Library from around the World!</h1>
         <span class="col-sm-8 col-sm-offset-4 nav"  >
         <a href="{{route('posts.create')}} " class="btn btn-sm btn-success" >Create New Artist</a>
@@ -12,6 +13,7 @@
         </span>
         <hr/>
         <div class="border"></div>
+
 <ol>
     @foreach($posts as $post)
         <h2><li><a href="{{route('posts.show',$post->id )}}" >{{$post->text}}</a></li></h2>
