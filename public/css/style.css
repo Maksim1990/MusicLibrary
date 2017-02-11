@@ -1,0 +1,10 @@
+.main {margin-top:100px;
+    border:2px solid black;
+border-radius: 10px;
+    box-shadow: 10px 10px 5px #888888;}
+ul li>h3 {
+    display: inline;}
+#home {width: 70px;
+height: 70px;}
+body{background: url("../img/background.jpg") 100% 100% no-repeat;
+    background-position: right bottom; }
