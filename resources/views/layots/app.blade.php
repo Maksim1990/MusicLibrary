@@ -10,6 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link href="{!! asset('css/fonts.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <link href="{!! asset('css/style.css') !!}" media="all" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="{!! asset('favicon.ico') !!}">
 </head>
 <body>
 

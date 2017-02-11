@@ -7,7 +7,7 @@
     <ol>
         <table style="width:100%">
 
-
+@if(empty($tracks))
                 @foreach ($tracks as $track)
                 <tr>
                       <td><li><a href="{{route('posts.editTrack',compact('track') )}}">{{$track->track_title}}</a></li></td>
@@ -19,7 +19,8 @@
                     </td>
                 </tr>
                 @endforeach
-
+@else <h3 class="warning">There is no any tracks in this album.</h3>
+            @endif
         </table>
     </ol>
 </div>
