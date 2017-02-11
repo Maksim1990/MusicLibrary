@@ -21,8 +21,8 @@ class PostController extends Controller
     public function track($id){
         $album=Album::findOrFail($id);
         $tracks=$album->tracks;
-
-        return view('posts.track', compact('tracks'));
+        $posts=Post::all();
+        return view('posts.track', compact('tracks','posts'));
     }
 
     public function index()
@@ -39,17 +39,20 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
-        return redirect('/posts');
+        $posts=Post::all();
+
+        return view('posts.create',compact('posts'));
     }
     public function createTrack(){
         $album=Album::all();
-        return view('posts.createTrack',compact('album'));
+        $posts=Post::all();
+        return view('posts.createTrack',compact('album','posts'));
     }
 
     public function createAlbum(){
      $artist=Post::all();
-        return view('posts.createAlbum',compact('artist'));
+        $posts=Post::all();
+        return view('posts.createAlbum',compact('artist','posts'));
     }
     /**
      * Store a newly created resource in storage.
@@ -82,9 +85,9 @@ class PostController extends Controller
     public function show($id)
     {
         $post=Post::findOrFail($id);
+        $posts=Post::all();
 
-
-      return view('posts.show', compact('post'));
+      return view('posts.show', compact('post','posts'));
     }
     
 
@@ -98,17 +101,20 @@ class PostController extends Controller
     public function edit($id)
     {
         $post=Post::findOrFail($id);
-        return view('posts.edit', compact('post'));
+        $posts=Post::all();
+        return view('posts.edit', compact('post','posts'));
     }
     public function editAlbum($id)
     {
         $album=Album::findOrFail($id);
-        return view('posts.editAlbum', compact('album'));
+        $posts=Post::all();
+        return view('posts.editAlbum', compact('album','posts'));
     }
     public function editTrack($id)
     {
         $track=Song::findOrFail($id);
-        return view('posts.editTrack', compact('track'));
+        $posts=Post::all();
+        return view('posts.editTrack', compact('track','posts'));
     }
     /**
      * Update the specified resource in storage.

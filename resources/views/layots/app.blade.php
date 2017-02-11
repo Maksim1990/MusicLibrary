@@ -11,30 +11,36 @@
     <link href="{!! asset('css/style.css') !!}" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div ng-app="myApp" ng-controller="myCtrl">
-    <%  firstName + " " + lastName %>
-</div>
-
-<script>
-    var app = angular.module('myApp', [], function($interpolateProvider) {
-        $interpolateProvider.startSymbol('<%');
-        $interpolateProvider.endSymbol('%>');
-    });
-    app.controller("myCtrl", function($scope) {
-        $scope.firstName = "Music ";
-        $scope.lastName = "Library";
-    });
-
-</script>
 
 <div class="container" >
     <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-            @yield('contact')
+        <div ng-app="myApp" ng-controller="myCtrl" >
+            <div class="col-sm-6 ">
+                <h1>HHHHHHHHHHH</h1>
+                <%  firstName + " " + lastName %>
+                <p>What is Lorem Ipsum?
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            </div>
+            <div class="col-sm-3 ">
+                <h1>HHHHHHHHHHH</h1>
+                <table border="1" width="100%">
+                    <tr>
+                        <th ng-click="orderByMe('name')">Name</th>
+
+                    </tr>
+                    <tr ng-repeat="x in names | orderBy:myOrderBy">
+                        <td><%x.name%></td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-8 ">
+        @yield('contact')
         </div>
     </div>
     <div class="col-sm-2 col-sm-offset-1">
-    <h1><a href="{{url()->previous()}}"> Back </a></h1>
+    <h1><a href="{{url()->previous()}}"> <img id="back" src="{!! asset('img/back.png') !!}"> </a></h1>
         </div>
         <div class="col-sm-5 ">
     <h1><a href="{{URL::to('/posts')}}"><img id="home" src="{!! asset('img/home.png') !!}"> </a></h1>
@@ -42,5 +48,23 @@
 </div>
 
 @yield('footer')
+<script>
+    var app = angular.module('myApp', [], function($interpolateProvider) {
+        $interpolateProvider.startSymbol('<%');
+        $interpolateProvider.endSymbol('%>');
+    });
+    app.controller("myCtrl", function($scope) {
+        $scope.names = [
+            @foreach($posts as $post)
+            {name:'{{$post->text}}'},
+
+            @endforeach
+        ];
+        $scope.orderByMe = function(x) {
+            $scope.myOrderBy = x;
+        }
+    });
+
+</script>
 </body>
 </html>

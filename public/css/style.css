@@ -4,7 +4,13 @@ border-radius: 10px;
     box-shadow: 10px 10px 5px #888888;}
 ul li>h3 {
     display: inline;}
-#home {width: 70px;
+#home, #back {width: 70px;
 height: 70px;}
+#home:hover, #back:hover {
+    width:75px;
+    height:75px;}
 body{background: url("../img/background.jpg") 100% 100% no-repeat;
     background-position: right bottom; }
+.nav {display: block;}
+.border {height: 10px;
+border-bottom: 1px dashed black;}
