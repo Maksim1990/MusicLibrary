@@ -36,6 +36,10 @@
                 </table>
             </div>
         </div>
+        <marquee style="color: #3AA3B7; font-size: 40px; font-weight: bolder; line-height: 150%; text-shadow: #000000 0px 1px 1px;">
+            Music Library announcement:
+            <span class="temp"> here you can store, create, update & delete your favourite artists with their albums & songs!!! </span>
+        </marquee>
         <div class="col-sm-8 ">
         @yield('contact')
         </div>
@@ -49,6 +53,7 @@
 </div>
 </div>
 </div>
+
 @yield('footer')
 <script>
     var app = angular.module('myApp', [], function($interpolateProvider) {
