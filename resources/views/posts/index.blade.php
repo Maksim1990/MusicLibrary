@@ -4,7 +4,7 @@
 
     <div class="col-sm-8 col-sm-offset-2 main"  >
 
-        <h1>Modern Music Library from around the World!</h1>
+        <h1 class="head">Modern Music Library from around the World!</h1>
         <span class="col-sm-8 col-sm-offset-4 nav"  >
         <a href="{{route('posts.create')}} " class="btn btn-sm btn-success" >Create New Artist</a>
         <a href="{{route('posts.createAlbum')}}" class="btn btn-sm btn-info ">Create New Album</a>
@@ -16,7 +16,7 @@
 
 <ol>
     @foreach($posts as $post)
-        <h2><li><a href="{{route('posts.show',$post->id )}}" >{{$post->text}}</a></li></h2>
+        <h2><li class="link"><a href="{{route('posts.show',$post->id )}}" >{{$post->text}}</a></li></h2>
 
     @endforeach
 </ol>

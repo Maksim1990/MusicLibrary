@@ -14,3 +14,9 @@ body{background: url("../img/background.jpg") 100% 100% no-repeat;
 .nav {display: block;}
 .border {height: 10px;
 border-bottom: 1px dashed black;}
+.head {
+    font-family: "MovaviBItalic";
+text-align: center;}
+.link {
+    font-family: "Blogger Sans-Medium";
+}
