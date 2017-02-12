@@ -11,6 +11,10 @@ Route::group(['middleware' => ['web']], function () {
         'uses' => 'PostController@home',
         'as' => 'posts'
     ]);
+    Route::get('/', [
+        'uses' => 'PostController@home',
+        'as' => '/'
+    ]);
     Route::get('/posts/tracks/{id}', [
         'uses' => 'PostController@track',
         'as' => 'posts.track'
