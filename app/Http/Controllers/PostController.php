@@ -21,8 +21,9 @@ class PostController extends Controller
     public function track($id){
         $album=Album::findOrFail($id);
         $tracks=$album->tracks;
+        $post=Post::where('id',$album->post_id)->get();
         $posts=Post::all();
-        return view('posts.track', compact('tracks','posts'));
+        return view('posts.track', compact('tracks','posts','album','post'));
     }
 
     public function index()

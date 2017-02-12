@@ -5,7 +5,8 @@ border-radius: 10px;
 ul li>h3 {
     display: inline;}
 #home, #back {width: 70px;
-height: 70px;}
+height: 70px;
+margin-bottom:20px;}
 #home:hover, #back:hover {
     width:75px;
     height:75px;}

@@ -9,11 +9,16 @@ class Album extends Model
     protected $fillable=[
         'album',
         'year',
-        'post_id'
+        'post_id',
+        
 
     ];
     public function tracks(){
 
         return $this->hasMany('App\Song');
+    }
+    public function artists(){
+
+        return $this->belongsToMany('App\Post');
     }
 }

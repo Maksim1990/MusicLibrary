@@ -6,21 +6,36 @@
     <h2>Songs in this album</h2>
     <ol>
         <table style="width:100%">
+<tr>
+    <th>Artist</th>
+    <th></th>
+    <th>Album</th>
+    <th></th>
+    <th>Year</th>
+    <th></th>
+    <th>Track Name</th>
+    <th></th>
+    <th>Duration</th>
+</tr>
 
-@if(empty($tracks))
                 @foreach ($tracks as $track)
+                @foreach ($post as $pos)
                 <tr>
-                      <td><li><a href="{{route('posts.editTrack',compact('track') )}}">{{$track->track_title}}</a></li></td>
-                <td>------------------</td>
+                    <td><li>{{$pos->text}}</li></td>
+                    <td>-----------</td>
+                    <td>{{$album->album}}</td>
+                    <td>-----------</td>
+                    <td>{{$album->year}}</td>
+                    <td>-----------</td>
+                      <td><a href="{{route('posts.editTrack',compact('track') )}}">{{$track->track_title}}</a></td>
+                <td>-----------</td>
                 <td>{{$track->duration}}</td>
                     <td>
-
-                            <a href="{{route('posts.editTrack',compact('track') )}}" class="btn btn-success btn-sm">Edit</a>
+                            <a href="{{route('posts.editTrack',compact('track') )}}" class="btn btn-success btn-sm">Edit Track</a>
                     </td>
                 </tr>
                 @endforeach
-@else <h3 class="warning">There is no any tracks in this album.</h3>
-            @endif
+            @endforeach
         </table>
     </ol>
 </div>
