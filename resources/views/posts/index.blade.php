@@ -1,7 +1,7 @@
 @extends('layots.app')
 
 @section ('content')
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <div class="col-sm-8 col-sm-offset-2 main"  >
 
         <h1 class="head">Modern Music Library from around the World!</h1>
@@ -16,8 +16,22 @@
 
 <ol>
     @foreach($posts as $post)
-        <h2><li class="link"><a href="{{route('posts.show',$post->id )}}" >{{$post->text}}</a></li></h2>
+        <h2><li class="link"><a href="{{route('posts.show',$post->id )}}" >{{$post->text}}</a>
+        <a  class="btn btn-info btn-sm but-{{$post->id}}">Show available Albums</a></li></h2>
+<div class="al-list list-{{$post->id}}">
+    <ul>
+    @foreach($post->albums as $pos)
+   <li>{{$pos->album}}</li>
+    @endforeach
+    </ul>
+</div>
 
+  <script>
+      $( ".but-{{$post->id}}" ).on( "click", function() {
+          $(".list-{{$post->id}}").toggle();
+      });
+
+  </script>
     @endforeach
 </ol>
         <div class="border"></div>
