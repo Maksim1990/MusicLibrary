@@ -42,11 +42,14 @@
                     </td>
 
                 </tr>
-                    <hr>
+
                 @endforeach
             @endforeach
+            <hr>
         </table>
-        @else <p class="warning">There are no tracks in this album yet!</p>
+        @else <p class="warning">There are no tracks in this album yet!
+            <a href="{{route('posts.createTrack')}}" class="btn btn-sm btn-danger dan">Create New Track</a>
+        </p>
         @endif
     </ol>
 </div>

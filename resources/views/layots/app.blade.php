@@ -19,10 +19,10 @@
     <div class="row">
         <div ng-app="myApp" ng-controller="myCtrl" >
             <div class="col-sm-6 ">
-                <h1>HHHHHHHHHHH</h1>
+                <h1>About MUSIC LIBRARY</h1>
                 <%  firstName + " " + lastName %>
-                <p>What is Lorem Ipsum?
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>What is Music Library?<br>
+           Online & desktop application with ability to add, create, update and delete discography of favourite artist. This app has function of fast and quick catalog tree view of all available items and immediately make any required changes. This app is under constant updating and development to make it easy and fastly working and connect together all Music World!
             </div>
             <div class="col-sm-4 ">
                 <h1>All available artists</h1>
