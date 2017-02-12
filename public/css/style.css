@@ -1,4 +1,4 @@
-.main {margin-top:100px;
+.main {MARGIN-TOP:20PX;
     border:2px solid black;
 border-radius: 10px;
     box-shadow: 10px 10px 5px #888888;
@@ -36,3 +36,23 @@ tr {border-bottom: 1px solid #888888;}
 .al-list, .tr-list {display:none;}
 .dan {padding: 0 5px 0 5px;
 height:18px;}
+.top {width:100%;
+height: 130px;
+background-color:#BADFEF;
+text-align: left;
+padding: 10px 40px 0 30px;}
+.top h1 {margin: 0 0 0 0;
+
+color:white;
+    display: block;
+    font-weight: 900;
+    font-family: "LadylikeBB";
+font-size:80px;}
+.top h1>a{color:inherit;
+text-decoration: none;}
+.top p {
+    font-family: "Akrobat-Regular";
+    font-size: 16px;
+    letter-spacing: 5px;
+    color:#1C8190;
+}

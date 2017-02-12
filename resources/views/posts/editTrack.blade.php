@@ -1,6 +1,10 @@
 @extends('layots.app')
 
 @section ('content')
+    <div class="top" >
+        <h1><a href="{{URL::to('/posts')}}">Music Library</a></h1>
+        <p>Connecting music World!</p>
+    </div>
     <div class="col-sm-8 col-sm-offset-2 main">
         <h1>Edit Album</h1>
         {!! Form::model($track,['method'=>'PATCH','action'=>['SongController@update',$track->id]])!!}

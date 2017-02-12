@@ -1,7 +1,10 @@
 @extends('layots.app')
 
 @section ('content')
-
+    <div class="top" >
+        <h1><a href="{{URL::to('/posts')}}">Music Library</a></h1>
+        <p>Connecting music World!</p>
+    </div>
     <div class="col-sm-8 col-sm-offset-2 main">
 <h1 class="head"><a href="{{route('posts.edit', compact('post'))}}" >{{$post->text}}</a></h1>
     <ul>

@@ -2,6 +2,10 @@
 
 @section ('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <div class="top" >
+        <h1><a href="{{URL::to('/posts')}}">Music Library</a></h1>
+        <p>Connecting music World!</p>
+    </div>
     <div class="col-sm-8 col-sm-offset-2 main"  >
 
         <h1 class="head">Modern Music Library from around the World!</h1>
