@@ -16,24 +16,32 @@
     <th>Track Name</th>
     <th></th>
     <th>Duration</th>
+    <th>Actions</th>
 </tr>
 
                 @foreach ($tracks as $track)
                 @foreach ($post as $pos)
                 <tr>
-                    <td><li>{{$pos->text}}</li></td>
-                    <td>-----------</td>
-                    <td>{{$album->album}}</td>
-                    <td>-----------</td>
+                    <td><li><a href="{{route('posts.edit', compact('pos'))}}" >{{$pos->text}}</a></li></td>
+                    <td>---------</td>
+                    <td><a href="{{route('posts.editAlbum',compact('album') )}}">{{$album->album}}</a></td>
+                    <td>---------</td>
                     <td>{{$album->year}}</td>
-                    <td>-----------</td>
+                    <td>---------</td>
                       <td><a href="{{route('posts.editTrack',compact('track') )}}">{{$track->track_title}}</a></td>
-                <td>-----------</td>
+                <td>---------</td>
                 <td>{{$track->duration}}</td>
                     <td>
-                            <a href="{{route('posts.editTrack',compact('track') )}}" class="btn btn-success btn-sm">Edit Track</a>
+                        <a href="{{route('posts.edit', compact('pos'))}}" class="btn btn-info btn-sm but">Edit Artist</a>
+                        <a href="{{route('posts.create')}}" class="btn btn-info btn-sm but">Create Artist</a><br>
+                        <a href="{{route('posts.editAlbum',compact('album') )}}" class="btn btn-warning btn-sm but">Edit Album</a>
+                        <a href="{{route('posts.createAlbum' )}}" class="btn btn-warning btn-sm but">Create Album</a><br>
+                            <a href="{{route('posts.editTrack',compact('track') )}}" class="btn btn-success btn-sm but">Edit Track</a>
+                        <a href="{{route('posts.createTrack' )}}" class="btn btn-success btn-sm but">Create Track</a>
                     </td>
+
                 </tr>
+                    <hr>
                 @endforeach
             @endforeach
         </table>

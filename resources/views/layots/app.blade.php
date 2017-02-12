@@ -31,7 +31,7 @@
 
                     </tr>
                     <tr ng-repeat="x in names | orderBy:myOrderBy">
-                        <td><%x.name%></td>
+                        <td><a ng-href="/posts/<%x.link%>" > <%x.name%></a></td>
 
                     </tr>
                 </table>
@@ -64,8 +64,7 @@
     app.controller("myCtrl", function($scope) {
         $scope.names = [
             @foreach($posts as $post)
-            {name:'{{$post->text}}'},
-
+            {name:'{{$post->text}}',link:'{{$post->id}}'},
             @endforeach
         ];
         $scope.orderByMe = function(x) {
