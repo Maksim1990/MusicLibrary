@@ -33,4 +33,4 @@ font-size: 12px;
 padding: 0 0 0 0;}
 th, td, tr {text-align: center;}
 tr {border-bottom: 1px solid #888888;}
-.al-list {display:none;}
+.al-list, .tr-list {display:none;}

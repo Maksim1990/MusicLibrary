@@ -21,7 +21,20 @@
 <div class="al-list list-{{$post->id}}">
     <ul>
     @foreach($post->albums as $pos)
-   <li>{{$pos->album}}</li>
+   <li><a href="{{route('posts.track',$pos->id )}}" >{{$pos->album}}, [{{$pos->year}}]</a>
+       <a  class="btn btn-warning btn-sm but-tr-{{$pos->id}}">Show available Tracks</a></li>
+            <div class="tr-list list-tr-{{$pos->id}}">
+                <ol>
+                    @foreach($pos->tracks as $tr)
+                   <li>{{$tr->track_title}}</li>
+                    @endforeach
+                </ol>
+            </div>
+            <script>
+            $( ".but-tr-{{$pos->id}}" ).on( "click", function() {
+            $(".list-tr-{{$pos->id}}").toggle();
+            });
+            </script>
     @endforeach
     </ul>
 </div>
@@ -30,7 +43,6 @@
       $( ".but-{{$post->id}}" ).on( "click", function() {
           $(".list-{{$post->id}}").toggle();
       });
-
   </script>
     @endforeach
 </ol>
