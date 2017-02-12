@@ -20,14 +20,18 @@
         <a  class="btn btn-info btn-sm but-{{$post->id}}">Show available Albums</a></li></h2>
 <div class="al-list list-{{$post->id}}">
     <ul>
+        @if(!$post->albums->isEmpty())
     @foreach($post->albums as $pos)
    <li><a href="{{route('posts.track',$pos->id )}}" >{{$pos->album}}, [{{$pos->year}}]</a>
        <a  class="btn btn-warning btn-sm but-tr-{{$pos->id}}">Show available Tracks</a></li>
             <div class="tr-list list-tr-{{$pos->id}}">
                 <ol>
+                    @if(!$pos->tracks->isEmpty())
                     @foreach($pos->tracks as $tr)
-                   <li>{{$tr->track_title}}</li>
+                    <li>{{$tr->track_title}}</li>
                     @endforeach
+                    @else <p class="warning">There are no tracks in this album yet!</p>
+                    @endif
                 </ol>
             </div>
             <script>
@@ -36,6 +40,8 @@
             });
             </script>
     @endforeach
+        @else <p class="warning">There are no albums of this artist yet!</p>
+        @endif
     </ul>
 </div>
 

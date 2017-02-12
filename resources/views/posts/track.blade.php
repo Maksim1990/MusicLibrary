@@ -5,6 +5,7 @@
     <div class="col-sm-8 col-sm-offset-2 main">
     <h2>Songs in this album</h2>
     <ol>
+        @if(!$tracks->isEmpty())
         <table style="width:100%">
 <tr>
     <th>Artist</th>
@@ -45,5 +46,7 @@
                 @endforeach
             @endforeach
         </table>
+        @else <p class="warning">There are no tracks in this album yet!</p>
+        @endif
     </ol>
 </div>
